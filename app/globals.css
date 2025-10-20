@@ -1,1 +1,94 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../public/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../public/fonts/Poppins-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../public/fonts/Poppins-Bold.woff2") format("woff2"),
+    url("../public/fonts/Poppins-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("../public/fonts/FiraCode-Regular.woff2") format("woff2"),
+    url("../public/fonts/FiraCode-Regular.ttf") format("");
+}
+
+@font-face {
+  font-family: FiraCode;
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../public/fonts/FiraCode-Bold.woff2") format("woff2"),
+    url("../public/fonts/FiraCode-Bold.ttf") format("ttf");
+}
+
+@theme {
+  /* typography */
+  --font-primary: "Poppins", sans-serif;
+  --font-code: "FiraCode", monospace;
+
+  /* colors */
+  --color-bg: #1b1f3b;
+  --color-primary: #8b5cf6;
+  --color-secondary: #252849;
+  --color-text: #ececf1;
+  --color-accent: #c084fc;
+
+  /* breakpoints */
+  --breakpoint-sm: 690px;
+  --breakpoint-lg: 1130px;
+
+  /* shadows */
+  --inset-shadow-custom: inset 0 0 0.5rem var(--color-primary);
+  --shadow-custom: 0 0 1.5rem 0.5rem var(--color-primary);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+}
+
+@layer components {
+  .layout-container {
+    @apply mx-4 sm:mx-auto sm:px-8 lg:max-w-[1120px];
+  }
+  .collapsible--open {
+    @apply top-[2.2rem];
+  }
+}
+
+/* chrome autofill styling fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: var(--color-secondary) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-secondary) inset !important;
+  box-shadow: 0 0 0 1000px var(--color-secondary) inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  caret-color: var(--color-text) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
