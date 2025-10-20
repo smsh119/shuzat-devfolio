@@ -1,0 +1,15 @@
+
+User-agent: *
+
+# TODO: Allow it before building
+Disallow: /
+
+Disallow: /_next/
+Disallow: /api/
+
+# TODO: add a sitemap before buliding
+Sitemap: 
+
+# TODO: add host before building
+
+Host: 
