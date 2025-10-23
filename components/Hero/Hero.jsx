@@ -4,7 +4,7 @@ function Hero() {
       <div className="z-1 text-center sm:shrink-0 sm:grow sm:text-left">
         <p className="mb-5 text-base">Hi there 👋.</p>
         <p className="text-2xl">I am</p>
-        <h1 className="text-[2rem] font-bold sm:text-4xl">
+        <h1 className="text-[1.8rem] font-bold sm:text-4xl">
           S. M. Shuzatul Hoque
         </h1>
         <p className="text-2xl">Software Developer</p>
