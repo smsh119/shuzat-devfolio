@@ -38,6 +38,7 @@ function Button({
     return (
       <button
         {...rest}
+        type={type}
         className={`${customClass} active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear`}
       >
         {children}
