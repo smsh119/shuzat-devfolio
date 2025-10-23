@@ -1,3 +1,5 @@
+import { education, hobbies, interests } from "@/data/aboutData";
+
 function MoreAboutMe() {
   return (
     <>
@@ -9,25 +11,23 @@ function MoreAboutMe() {
           Education{" "}
         </h3>
         <p className="mb-12 max-w-[320px] text-xs sm:max-w-[540px] sm:text-xl lg:justify-self-start lg:text-left">
-          BSc. in Information and Communication Engineering
+          {education.degree}
           <br />
-          Uninversity of Rajshahi
+          {education.institution}
           <br />
-          Bangladesh
+          {education.country}
         </p>
         <h3 className="mb-3 text-nowrap text-base underline sm:text-xl lg:justify-self-end lg:text-left lg:no-underline lg:after:content-[':']">
           Interests{" "}
         </h3>
         <p className="mb-12 max-w-[320px] text-xs sm:max-w-[540px] sm:text-xl lg:justify-self-start lg:text-left">
-          Problem Solving, Learning New Technologies, Building Side Projects,
-          Game Development, Graphic Design, Figma Prototyping, Science related
-          stuff.
+          {interests}
         </p>
         <h3 className="mb-3 text-nowrap text-base underline sm:text-xl lg:justify-self-end lg:text-left lg:no-underline lg:after:content-[':']">
           Hobbies{" "}
         </h3>
         <p className="mb-12 max-w-[320px] text-xs sm:max-w-[540px] sm:text-xl lg:justify-self-start lg:text-left">
-          Traveling, Bike Riding, Gaming, Listening to Music.
+          {hobbies}
         </p>
       </section>
     </>
