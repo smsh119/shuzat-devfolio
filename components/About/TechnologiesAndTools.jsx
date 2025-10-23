@@ -1,24 +1,7 @@
+import { langsAndFrameworks, tools } from "@/data/aboutData";
 import ToolBadge from "./ToolBadge";
 
 function TechnologiesAndTools() {
-  const langsAndFrameworks = [
-    { logo: "/images/logos/html5.svg", name: "HTML5" },
-    { logo: "/images/logos/css3.svg", name: "CSS3" },
-    { logo: "/images/logos/javascript.svg", name: "JavaScript" },
-    { logo: "/images/logos/react.svg", name: "ReactJS" },
-    { logo: "/images/logos/nextjs.svg", name: "Next.js" },
-    { logo: "/images/logos/tailwind.svg", name: "Tailwind" },
-    { logo: "/images/logos/nodejs.png", name: "Node.js" },
-    { logo: "/images/logos/express-js.svg", name: "Express.js" },
-  ];
-
-  const tools = [
-    { logo: "/images/logos/vscode.svg", name: "VS Code" },
-    { logo: "/images/logos/github.svg", name: "Github" },
-    { logo: "/images/logos/git.svg", name: "Git" },
-    { logo: "/images/logos/postman.png", name: "Postman" },
-  ];
-
   return (
     <>
       <h2 className="border-text m-auto mb-8 inline-block border-b-2 px-6 text-lg sm:mb-11 sm:text-2xl">
