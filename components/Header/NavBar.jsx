@@ -13,10 +13,10 @@ function NavBar() {
       />
       {/* <!-- background for the collapsible navbar --> */}
       <div className="bg-secondary -z-1 absolute -top-3 right-0 h-11 w-40 sm:hidden"></div>
-      {/* <!-- add collapsible-open class to open the collapsible --> */}
+      {/* <!-- change class collapsible--close to collapsible--open to open the collapsible --> */}
       <div
         id="menu"
-        className="-z-2 sm:z-0 absolute -top-[7rem] right-0 flex w-32 flex-col gap-y-0.5 text-right text-xs transition-[top] duration-200 ease-linear sm:relative sm:top-0 sm:flex sm:w-auto sm:flex-row sm:text-base"
+        className="collapsible--close -z-2 sm:z-0 absolute  right-0 flex w-32 flex-col gap-y-0.5 text-right text-xs transition-[top] duration-200 ease-linear sm:relative sm:top-0 sm:flex sm:w-auto sm:flex-row sm:text-base"
       >
         <Link
           href="#about"

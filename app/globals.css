@@ -79,6 +79,9 @@
   .collapsible--open {
     @apply top-[2.2rem];
   }
+  .collapsible--close {
+    @apply -top-[7rem];
+  }
 }
 
 /* chrome autofill styling fix */
