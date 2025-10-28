@@ -1,15 +1,30 @@
+import * as motion from "motion/react-client";
+import Typing from "../Typing";
+
 function Hero() {
   return (
-    <section className="layout-container my-11 flex max-w-[840px] select-none flex-col items-center sm:my-14 sm:flex-row">
-      <div className="z-1 text-center sm:shrink-0 sm:grow sm:text-left">
-        <p className="mb-5 text-base">Hi there 👋.</p>
+    <section className="layout-container my-11 flex max-w-[840px] flex-col items-center select-none sm:my-14 sm:flex-row">
+      <motion.div
+        initial={{ opacity: 0, transform: "translateX(-100px)" }}
+        whileInView={{ opacity: 1, transform: "translateX(0)" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="z-1 text-center sm:shrink-0 sm:grow sm:text-left"
+      >
+        <p className="mb-5 text-base">
+          <Typing text="Hi there 👋." duration={50} initialDelay={500} />
+        </p>
         <p className="text-2xl">I am</p>
         <h1 className="text-[1.8rem] font-bold sm:text-4xl">
           S. M. Shuzatul Hoque
         </h1>
         <p className="text-2xl">Software Developer</p>
-      </div>
-      <div className="my-5 w-1/2 sm:my-0 sm:-ml-8 sm:w-[330px]">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, transform: "translateX(100px)" }}
+        whileInView={{ opacity: 1, transform: "translateX(0)" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="my-5 w-1/2 sm:my-0 sm:-ml-8 sm:w-[330px]"
+      >
         <picture className="block w-full">
           <source
             type="image/webp"
@@ -34,7 +49,7 @@ function Hero() {
             alt="S. M. Shuzatul Hoque Picture"
           />
         </picture>
-      </div>
+      </motion.div>
     </section>
   );
 }
