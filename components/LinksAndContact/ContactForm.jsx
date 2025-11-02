@@ -1,8 +1,14 @@
+import * as motion from "motion/react-client";
 import Button from "../Button";
-
 function ContactForm() {
+  const motionOptions = {
+    initial: { opacity: 0, transform: "translateX(50px)" },
+    whileInView: { opacity: 1, transform: "translateX(0)" },
+    transition: { duration: 0.5, ease: "easeInOut" },
+  };
   return (
-    <form
+    <motion.form
+      {...motionOptions}
       action="#"
       className="my-11 flex w-full max-w-[540px] flex-col items-center lg:pl-5"
     >
@@ -18,7 +24,7 @@ function ContactForm() {
           name="name"
           id="name"
           autoComplete="name"
-          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:outline-0 focus:ring-2 lg:text-left"
+          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:ring-2 focus:outline-0 lg:text-left"
         />
       </div>
       <div className="mb-5 w-full">
@@ -34,7 +40,7 @@ function ContactForm() {
           name="email"
           id="email"
           autoComplete="email"
-          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:outline-0 focus:ring-2 lg:text-left"
+          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:ring-2 focus:outline-0 lg:text-left"
         />
       </div>
       <div className="mb-5 w-full">
@@ -51,13 +57,13 @@ function ContactForm() {
           autoComplete="off"
           rows="8"
           cols="30"
-          className="bg-secondary focus:ring-text input:-webkit-autofill block w-full rounded-[10px] p-1 transition duration-200 ease-linear focus:outline-0 focus:ring-2"
+          className="bg-secondary focus:ring-text input:-webkit-autofill block w-full rounded-[10px] p-1 transition duration-200 ease-linear focus:ring-2 focus:outline-0"
         ></textarea>
       </div>
       <Button type="submit" size="lg">
         Send Message
       </Button>
-    </form>
+    </motion.form>
   );
 }
 

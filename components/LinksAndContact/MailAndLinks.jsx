@@ -1,12 +1,21 @@
 import { contacts } from "@/data/contactData";
+import * as motion from "motion/react-client";
 import Link from "next/link";
 import LinkBadge from "./LinkBadge";
 import LinksGroup from "./LinksGroup";
 
 function MailAndLinks() {
+  const motionOptions = {
+    initial: { opacity: 0, transform: "translateX(-50px)" },
+    whileInView: { opacity: 1, transform: "translateX(0)" },
+    transition: { duration: 0.5, ease: "easeInOut" },
+  };
   return (
     <div className="flex w-full flex-col items-center lg:col-start-1 lg:row-start-1 lg:border-r-4 lg:py-10 lg:pr-5">
-      <div className="lg:border-text w-11/12 max-w-[450px] lg:w-full lg:max-w-full">
+      <motion.div
+        {...motionOptions}
+        className="lg:border-text w-11/12 max-w-[450px] lg:w-full lg:max-w-full"
+      >
         <div className="bg-secondary mb-3 w-full rounded-[10px] text-xl sm:text-2xl">
           <Link
             href={`mailto:${contacts.email}`}
@@ -42,7 +51,7 @@ function MailAndLinks() {
             />
           ))}
         </LinksGroup>
-      </div>
+      </motion.div>
     </div>
   );
 }
