@@ -14,7 +14,7 @@ function LinkBadge({ logoUrl, name, href }) {
         src={logoUrl}
         alt={`${name} Logo`}
       />
-      <span>Linkedin</span>
+      <span>{name}</span>
     </Link>
   );
 }
