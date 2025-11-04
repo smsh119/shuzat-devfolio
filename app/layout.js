@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import ToasterProvider from "@/components/ToasterProvider";
 import "./globals.css";
 
 export const metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <ToasterProvider />
       </body>
     </html>
   );
