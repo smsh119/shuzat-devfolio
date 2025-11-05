@@ -51,6 +51,7 @@
   --color-secondary: #252849;
   --color-text: #ececf1;
   --color-accent: #c084fc;
+  --color-danger: #ff0000;
 
   /* breakpoints */
   --breakpoint-sm: 690px;

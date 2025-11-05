@@ -1,66 +1,97 @@
-import * as motion from "motion/react-client";
+"use client";
+
+import { MESSAGE_CHAR_LIMIT } from "@/lib/constants";
+import { contactFormSchema } from "@/lib/formValidationSchemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "motion/react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import Button from "../Button";
+import Input from "../FormComponents/Input";
+import TextArea from "../FormComponents/TextArea";
+
 function ContactForm() {
+  // hooks
+  const [msgCharCount, setMsgCharCount] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  // motion animation options
   const motionOptions = {
     initial: { opacity: 0, transform: "translateX(50px)" },
     whileInView: { opacity: 1, transform: "translateX(0)" },
     transition: { duration: 0.5, ease: "easeInOut" },
   };
+
+  const onSubmit = async (data) => {
+    // TODO: Implement form submission logic
+    console.log("submiting: ", data);
+    const prom = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("submitted");
+      }, 2000);
+    });
+    const res = await prom;
+    console.log(res);
+    reset();
+    toast.success("Message sent successfully!");
+  };
+
   return (
     <motion.form
       {...motionOptions}
-      action="#"
+      onSubmit={handleSubmit(onSubmit)}
       className="my-11 flex w-full max-w-[540px] flex-col items-center lg:pl-5"
     >
-      <div className="mb-5 w-full">
-        <label
-          htmlFor="name"
-          className="mb-1 block text-base font-bold lg:text-left"
-        >
-          Name
-        </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          autoComplete="name"
-          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:ring-2 focus:outline-0 lg:text-left"
-        />
-      </div>
-      <div className="mb-5 w-full">
-        <label
-          htmlFor="email"
-          className="mb-1 block text-base font-bold after:text-red-500 after:content-['*'] lg:text-left"
-        >
-          Email
-        </label>
-        <input
-          required
-          type="email"
-          name="email"
-          id="email"
-          autoComplete="email"
-          className="bg-secondary input:-webkit-autofill focus:border-text focus:ring-text block h-10 w-full rounded-[10px] p-1 text-center transition duration-200 ease-linear focus:ring-2 focus:outline-0 lg:text-left"
-        />
-      </div>
-      <div className="mb-5 w-full">
-        <label
-          htmlFor="message"
-          className="mb-1 block text-base font-bold after:text-red-500 after:content-['*'] lg:text-left"
-        >
-          Message
-        </label>
-        <textarea
-          required
-          name="message"
-          id="message"
-          autoComplete="off"
-          rows="8"
-          cols="30"
-          className="bg-secondary focus:ring-text input:-webkit-autofill block w-full rounded-[10px] p-1 transition duration-200 ease-linear focus:ring-2 focus:outline-0"
-        ></textarea>
-      </div>
-      <Button type="submit" size="lg">
+      <Input
+        register={register}
+        label="Name"
+        type="text"
+        name="name"
+        id="name"
+        autoComplete="name"
+        error={errors?.name?.message}
+      />
+
+      <Input
+        register={register}
+        label="Email"
+        type="email"
+        name="email"
+        id="email"
+        autoComplete="email"
+        required
+        error={errors?.email?.message}
+      />
+
+      <TextArea
+        label="Message"
+        required
+        register={register}
+        onChange={(e) => setMsgCharCount(e.target.value.length)}
+        maxLength={MESSAGE_CHAR_LIMIT}
+        name="message"
+        id="message"
+        autoComplete="off"
+        rows="8"
+        cols="30"
+        error={errors?.message?.message}
+        textCharCount={msgCharCount}
+      />
+
+      <Button
+        type="submit"
+        size="lg"
+        color={isSubmitting ? "secondary" : "primary"}
+        isSubmitting={isSubmitting}
+      >
         Send Message
       </Button>
     </motion.form>
