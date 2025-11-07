@@ -1,6 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const bgColorMap = {
+  bg: "bg-bg",
+  primary: "bg-primary",
+  secondary: "bg-secondary",
+  text: "bg-text",
+  accent: "bg-accent",
+  danger: "bg-danger",
+};
+
 function Button({
   children,
   type = "button",
@@ -10,8 +19,8 @@ function Button({
   ...rest
 }) {
   let customClass = "";
-  // add style based on type prop
-  if (color !== undefined) customClass = `bg-${color}`;
+  // add style based on color prop
+  if (color !== undefined) customClass = bgColorMap[color];
 
   // add style based on size prop
   if (size === "lg")
