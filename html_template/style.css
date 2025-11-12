@@ -112,3 +112,20 @@ input:-webkit-autofill:focus {
 #blogs .blog:hover .blog-readmore {
   @apply pointer-events-none opacity-0 transition-opacity duration-200;
 }
+
+/* Project card hover display style control */
+#projects .project .project-card-buttons-bg {
+  @apply scale-y-100 transition-opacity transition-transform duration-200;
+}
+
+#projects .project:hover .project-card-buttons-bg {
+  @apply scale-y-[4] opacity-80;
+}
+
+#projects .project .project-card-buttons {
+  @apply transition-transform duration-200;
+}
+
+#projects .project:hover .project-card-buttons {
+  @apply -translate-y-6;
+}

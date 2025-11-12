@@ -326,7 +326,7 @@
       </h1>
       <div class="flex flex-wrap justify-center gap-8">
         <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
+          class="project inset-shadow-custom bg-secondary hover:shadow-custom relative flex max-w-80 flex-col justify-center gap-3 overflow-hidden rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
         >
           <h2 class="text-2xl font-bold">Project Name</h2>
           <img
@@ -334,171 +334,62 @@
             alt="Project Thumbnail"
             class="rounded-tl-4xl rounded-br-4xl w-full"
           />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="text-xs">
-            This is a front-end of a website built with raw HTML and CSS. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Magnam, provident! Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Dolorum, aliquid!
-          </p>
-          <div class="flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
+          <div class="-mb-1 mt-1 flex flex-wrap items-center gap-1.5">
+            <div
+              class="bg-accent inline-block rounded-sm px-2 py-0.5 text-[0.625rem] font-bold sm:text-sm"
             >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
-            >
+              Web
+            </div>
           </div>
-        </article>
-        <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
-        >
-          <h2 class="text-2xl font-bold">Project Name</h2>
-          <img
-            src="./assets/images/project-thumb-demo.png"
-            alt="Project Thumbnail"
-            class="rounded-tl-4xl rounded-br-4xl w-full"
-          />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="my-auto text-xs">
+
+          <p class="text-justify text-xs">
             This is a front-end of a website built with raw HTML and CSS. Lorem
             Ipsum has been the industry's standard dummy text ever since the
             1500s, when an unknown printer took a galley of type and scrambled
             it to make a type specimen book.
           </p>
-          <div class="mt-auto flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
+          <div class="flex flex-wrap items-center gap-1">
+            <span class="text-[0.5rem] font-bold sm:text-[0.625rem]"
+              >Tech:
+            </span>
+            <div
+              class="bg-primary inline-block rounded-sm px-2 py-0.5 text-[0.5rem] font-bold sm:text-[0.625rem]"
             >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
+              Next.js
+            </div>
+            <div
+              class="bg-primary inline-block rounded-sm px-2 py-0.5 text-[0.5rem] font-bold sm:text-[0.625rem]"
             >
+              ReactJS
+            </div>
           </div>
-        </article>
-        <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
-        >
-          <h2 class="text-2xl font-bold">Project Name</h2>
-          <img
-            src="./assets/images/project-thumb-demo.png"
-            alt="Project Thumbnail"
-            class="rounded-tl-4xl rounded-br-4xl w-full"
-          />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="my-auto text-xs">
-            This is a front-end of a website built with raw HTML and CSS. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book.
-          </p>
-          <div class="mt-auto flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
+          <!-- Project Card buttons -->
+          <div class="h-4">
+            <div
+              class="project-card-buttons-bg absolute bottom-0 left-0 h-10 w-full bg-black opacity-50"
+            ></div>
+            <div
+              class="project-card-buttons absolute bottom-2.5 left-0 flex w-full items-center justify-around gap-2"
             >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
-            >
-          </div>
-        </article>
-        <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
-        >
-          <h2 class="text-2xl font-bold">Project Name</h2>
-          <img
-            src="./assets/images/project-thumb-demo.png"
-            alt="Project Thumbnail"
-            class="rounded-tl-4xl rounded-br-4xl w-full"
-          />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="my-auto text-xs">
-            This is a front-end of a website built with raw HTML and CSS. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book.
-          </p>
-          <div class="mt-auto flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
-            >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
-            >
-          </div>
-        </article>
-        <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
-        >
-          <h2 class="text-2xl font-bold">Project Name</h2>
-          <img
-            src="./assets/images/project-thumb-demo.png"
-            alt="Project Thumbnail"
-            class="rounded-tl-4xl rounded-br-4xl w-full"
-          />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="my-auto text-xs">
-            This is a front-end of a website built with raw HTML and CSS. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book.
-          </p>
-          <div class="mt-auto flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
-            >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
-            >
-          </div>
-        </article>
-        <article
-          class="inset-shadow-custom bg-secondary hover:shadow-custom flex max-w-80 flex-col justify-center gap-3 rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
-        >
-          <h2 class="text-2xl font-bold">Project Name</h2>
-          <img
-            src="./assets/images/project-thumb-demo.png"
-            alt="Project Thumbnail"
-            class="rounded-tl-4xl rounded-br-4xl w-full"
-          />
-          <h3 class="text-base font-bold underline">Description</h3>
-          <p class="my-auto text-xs">
-            This is a front-end of a website built with raw HTML and CSS. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book.
-          </p>
-          <div class="mt-auto flex justify-center gap-4">
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >Source Code</a
-            >
-            <a
-              href="#"
-              class="bg-primary active:bg-bg hover:ring-text hover:ring-3 rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear"
-              >View Project</a
-            >
+              <a
+                href="#"
+                class="border-primary hover:text-accent grow basis-1 border-r-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
+              >
+                View Details
+              </a>
+              <a
+                href="#"
+                class="border-primary hover:text-accent grow basis-1 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
+              >
+                Source Code
+              </a>
+              <a
+                href="#"
+                class="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
+              >
+                View Demo
+              </a>
+            </div>
           </div>
         </article>
       </div>
