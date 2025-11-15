@@ -9,7 +9,7 @@ function Card({ children }) {
   return (
     <motion.article
       {...motionOptions}
-      className="project inset-shadow-custom bg-secondary hover:shadow-custom relative flex max-w-80 flex-col justify-center gap-3 overflow-hidden rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
+      className="card inset-shadow-custom bg-secondary hover:shadow-custom relative flex max-w-80 flex-col justify-center gap-3 overflow-hidden rounded-xl px-6 py-7 transition duration-200 ease-linear hover:scale-[1.02]"
     >
       {children}
     </motion.article>

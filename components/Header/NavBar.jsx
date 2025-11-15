@@ -25,32 +25,32 @@ function NavBar() {
         className={`${navbarCollapsed ? "collapsible--close" : "collapsible--open"} absolute right-0 -z-2 flex w-32 flex-col gap-y-0.5 text-right text-xs transition-[top] duration-200 ease-linear sm:relative sm:top-0 sm:z-0 sm:flex sm:w-auto sm:flex-row sm:text-base`}
       >
         <Link
-          href="#about"
+          href="/#about"
           className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
           onClick={() => setNavbarCollapsed(true)}
         >
           About
         </Link>
         <Link
-          href="#projects"
+          href="/#projects"
           className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
           onClick={() => setNavbarCollapsed(true)}
         >
           Projects
         </Link>
         <Link
-          href="#linksAndContact"
+          href="/#linksAndContact"
           className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
           onClick={() => setNavbarCollapsed(true)}
         >
           Links and Contact
         </Link>
         <Link
-          href="#"
+          href="/blogs"
           className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
           onClick={() => setNavbarCollapsed(true)}
         >
-          Blog
+          Blogs
         </Link>
       </div>
     </nav>
