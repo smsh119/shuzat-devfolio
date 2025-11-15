@@ -13,7 +13,7 @@ function Header() {
         transition={{ duration: 1, ease: "easeInOut" }}
         className="layout-container flex items-center justify-between py-2 select-none"
       >
-        <Link href="#">
+        <Link href="/">
           <Image
             src={LOGO}
             alt="SMSH Logo"
