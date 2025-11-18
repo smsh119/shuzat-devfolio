@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import ToasterProvider from "@/components/ToasterProvider";
 import "./globals.css";
@@ -58,6 +59,8 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+
+        <Footer />
         <ToasterProvider />
       </body>
     </html>
