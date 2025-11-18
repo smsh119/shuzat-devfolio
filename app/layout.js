@@ -56,10 +56,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>
+      <body className="grid min-h-screen grid-rows-[auto_1fr_auto]">
         <Header />
-        {children}
-
+        <main>{children}</main>
         <Footer />
         <ToasterProvider />
       </body>
