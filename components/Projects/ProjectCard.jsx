@@ -4,9 +4,10 @@ import Badge from "../Badge";
 import Card from "../Card";
 
 function ProjectCard({
-  projectName,
-  projectDescription,
-  imgUrl,
+  id,
+  title,
+  description,
+  images,
   sourceCodeUrl,
   demoUrl,
   platforms,
@@ -14,12 +15,12 @@ function ProjectCard({
 }) {
   return (
     <Card>
-      <h2 className="text-2xl font-bold">{projectName}</h2>
+      <h2 className="text-2xl font-bold">{title}</h2>
       <Image
         width={320}
         height={200}
-        src={imgUrl}
-        alt={`${projectName} Thumbnail`}
+        src={images?.thumbnailUrl}
+        alt={`${title} Thumbnail`}
         className="w-full rounded-tl-4xl rounded-br-4xl"
       />
 
@@ -32,12 +33,7 @@ function ProjectCard({
           ))}
       </div>
 
-      <p className="text-justify text-xs">
-        This is a front-end of a website built with raw HTML and CSS. Lorem
-        Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a
-        type specimen book.
-      </p>
+      <p className="text-justify text-xs">{description}</p>
       <div className="flex flex-wrap items-center gap-1">
         <span className="text-[0.5rem] font-bold sm:text-[0.625rem]">
           Tech:
@@ -46,18 +42,22 @@ function ProjectCard({
         {technologies?.length > 0 &&
           technologies.map((tech) => <Badge key={tech}>{tech}</Badge>)}
       </div>
-      <ProjectCardButtons sourceCodeUrl={sourceCodeUrl} demoUrl={demoUrl} />
+      <ProjectCardButtons
+        sourceCodeUrl={sourceCodeUrl}
+        demoUrl={demoUrl}
+        projectId={id}
+      />
     </Card>
   );
 }
 
-function ProjectCardButtons({ sourceCodeUrl, demoUrl }) {
+function ProjectCardButtons({ sourceCodeUrl, demoUrl, projectId }) {
   return (
     <div className="h-4">
       <div className="project-card-buttons-bg absolute bottom-0 left-0 h-10 w-full bg-black opacity-50"></div>
       <div className="project-card-buttons absolute bottom-2.5 left-0 flex w-full items-center justify-around gap-2 text-center">
         <Link
-          href="#"
+          href={`/projects/${projectId}`}
           className="border-primary hover:text-accent grow basis-1 border-r-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
         >
           View Details

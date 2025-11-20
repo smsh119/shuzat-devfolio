@@ -9,13 +9,7 @@ function Blogs() {
     >
       <div className="flex flex-wrap justify-center gap-8">
         {blogs?.length > 0 ? (
-          blogs?.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              thumbnailUrl={blog.imageUrls.thumbnailUrl}
-              {...blog}
-            />
-          ))
+          blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)
         ) : (
           <div>Sorry! No blogs.</div>
         )}

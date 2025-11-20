@@ -7,7 +7,7 @@ function BlogCard({
   id,
   title,
   description,
-  thumbnailUrl,
+  images,
   author,
   publishDate,
   categories,
@@ -17,7 +17,7 @@ function BlogCard({
     <Link href="/blogs/id">
       <Card>
         <Image
-          src={thumbnailUrl}
+          src={images?.thumbnailUrl}
           alt={`${title} Thumbnail`}
           className="w-full rounded-lg"
           width={320}
