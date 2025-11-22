@@ -53,9 +53,7 @@ async function ProjectPage({ params }) {
                   href={`/projects?search=${tech}`}
                   className="transition-transform duration-200 hover:scale-[1.1]"
                 >
-                  <div className="bg-primary inline-block rounded-sm px-2 py-0.5 text-[0.5rem] font-bold sm:text-[0.625rem]">
-                    {tech}
-                  </div>
+                  <Badge>{tech}</Badge>
                 </Link>
               ))}
             </div>
