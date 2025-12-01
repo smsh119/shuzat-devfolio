@@ -1,11 +1,10 @@
 import Blogs from "@/components/Blogs/Blogs";
 import Filter from "@/components/Filter";
-import { getAllMdx } from "@/lib/mdx/getAllMdx";
+import { getBlogs } from "@/lib/contents";
 
 async function BlogsPage({ searchParams }) {
   const filters = await searchParams;
-  const blogs = getAllMdx("blogs");
-  console.log(blogs);
+  const blogs = getBlogs();
   return (
     <>
       <Filter
@@ -14,7 +13,7 @@ async function BlogsPage({ searchParams }) {
         url={`/blogs`}
         filters={filters}
       />
-      <Blogs />
+      <Blogs blogs={blogs} />
     </>
   );
 }

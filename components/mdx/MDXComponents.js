@@ -4,7 +4,7 @@ export default {
   p: (props) => <p className="mb-4 leading-relaxed" {...props} />,
   ul: (props) => <ul className="mb-4 ml-6 list-disc" {...props} />,
   code: (props) => (
-    <code className="rounded bg-gray-200 px-1 py-0.5 text-sm" {...props} />
+    <code className="bg-secondary rounded-lg p-3 text-sm" {...props} />
   ),
   img: (props) => (
     <Image sizes="100vw" style={{ width: "100%", height: "auto" }} {...props} />

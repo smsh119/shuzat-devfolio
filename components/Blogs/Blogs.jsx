@@ -1,7 +1,6 @@
-import blogs from "@/data/blogsData";
 import BlogCard from "./BlogCard";
 
-function Blogs() {
+function Blogs({ blogs }) {
   return (
     <section
       className="layout-container mb-32 scroll-mt-20 select-none"

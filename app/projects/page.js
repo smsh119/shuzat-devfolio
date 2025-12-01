@@ -1,11 +1,10 @@
 import Filter from "@/components/Filter";
 import Projects from "@/components/Projects/Projects";
-import { getAllMdx } from "@/lib/mdx/getAllMdx";
+import { getProjects } from "@/lib/contents";
 
 async function ProjectsPage({ searchParams }) {
   const filters = await searchParams;
-  const projects = getAllMdx("projects");
-  console.log(projects);
+  const projects = getProjects();
   return (
     <>
       <Filter
@@ -14,7 +13,7 @@ async function ProjectsPage({ searchParams }) {
         url={`/projects`}
         filters={filters}
       />
-      <Projects isHeadingVisible={false} />
+      <Projects isHeadingVisible={false} projects={projects} />
     </>
   );
 }
