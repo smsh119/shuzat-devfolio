@@ -14,7 +14,7 @@ function BlogCard({
   tags,
 }) {
   return (
-    <Link href="/blogs/id">
+    <Link href={`/blogs/${id}`}>
       <Card>
         <Image
           src={images?.thumbnailUrl}
