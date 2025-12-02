@@ -1,3 +1,4 @@
+import * as motion from "motion/react-client";
 import Link from "next/link";
 import Searchbar from "./Searchbar";
 
@@ -21,7 +22,12 @@ function Filter({ searchPlaceholder, categories = [], url, filters }) {
   if (!currentCategory) currentCategory = "all";
 
   return (
-    <div className="layout-container my-10 flex flex-col items-center gap-3">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeIn" }}
+      className="layout-container my-10 flex flex-col items-center gap-3"
+    >
       <Searchbar placeholder={searchPlaceholder} />
       <div className="flex gap-3 sm:gap-5 lg:gap-8">
         <Link
@@ -40,7 +46,7 @@ function Filter({ searchPlaceholder, categories = [], url, filters }) {
           </Link>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
