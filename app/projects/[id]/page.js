@@ -1,4 +1,5 @@
 import Badge from "@/components/Badge";
+import Button from "@/components/Button";
 import { getProject } from "@/lib/contents";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,18 +61,16 @@ async function ProjectPage({ params }) {
         </div>
 
         <div className="my-6 flex w-full justify-center gap-5">
-          <Link
+          <Button
             href={projectData.sourceCodeUrl}
-            className="bg-primary active:bg-bg hover:ring-text rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear hover:ring-3"
+            type="anchor"
+            target="_blank"
           >
             Source Code
-          </Link>
-          <Link
-            href={projectData.demoUrl}
-            className="bg-primary active:bg-bg hover:ring-text rounded-3xl px-4 py-2 text-xs font-bold transition duration-200 ease-linear hover:ring-3"
-          >
+          </Button>
+          <Button href={projectData.demoUrl} type="anchor" target="_blank">
             View Demo
-          </Link>
+          </Button>
         </div>
 
         <div className="my-6 w-full text-justify text-xs select-text sm:text-base">
