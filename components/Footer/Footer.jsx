@@ -8,7 +8,7 @@ function Footer() {
   };
   return (
     <motion.footer {...motionOptions} className="bg-secondary">
-      <p className="py-4 text-center text-base select-none sm:text-xl">
+      <p className="py-2 text-center text-sm select-none sm:text-base">
         ©All Rights Reserved by SMSH.
       </p>
     </motion.footer>
