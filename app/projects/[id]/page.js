@@ -5,7 +5,7 @@ import Link from "next/link";
 
 async function ProjectPage({ params }) {
   const { id } = await params;
-  const { projectData, content } = await getProject("projects", id);
+  const { projectData, content } = await getProject(id);
   return (
     <section
       className="layout-container relative mb-32 scroll-mt-20 select-none"
