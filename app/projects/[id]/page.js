@@ -31,14 +31,14 @@ async function ProjectPage({ params }) {
           <div className="text-xs font-bold sm:text-base">Category:</div>
           <div>
             <div className="flex flex-wrap items-center gap-1.5">
-              {projectData.categories.map((platform) => (
+              {projectData.categories.map((cat) => (
                 <Link
-                  key={platform}
-                  href={`/projects?category=${platform}`}
+                  key={cat}
+                  href={`/projects?category=${cat}`}
                   className="transition-transform duration-200 hover:scale-[1.1]"
                 >
                   <Badge className="bg-accent text-[0.625rem] sm:text-sm">
-                    {platform}
+                    {cat}
                   </Badge>
                 </Link>
               ))}
