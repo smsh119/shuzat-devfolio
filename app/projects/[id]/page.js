@@ -28,10 +28,10 @@ async function ProjectPage({ params }) {
         </div>
 
         <div className="bg-secondary mx-auto grid max-w-xs grid-cols-[1fr_2fr] content-center items-center gap-3 rounded-lg p-3 sm:max-w-lg sm:gap-4 sm:p-4">
-          <div className="text-xs font-bold sm:text-base">Platform:</div>
+          <div className="text-xs font-bold sm:text-base">Category:</div>
           <div>
             <div className="flex flex-wrap items-center gap-1.5">
-              {projectData.platforms.map((platform) => (
+              {projectData.categories.map((platform) => (
                 <Link
                   key={platform}
                   href={`/projects?category=${platform}`}
