@@ -3,10 +3,14 @@ import Button from "@/components/Button";
 import { getProject } from "@/lib/contents";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 async function ProjectPage({ params }) {
   const { id } = await params;
   const { projectData, content } = await getProject(id);
+  if (content === null) {
+    notFound();
+  }
   return (
     <section
       className="layout-container relative mb-32 scroll-mt-20 select-none"

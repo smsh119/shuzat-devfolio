@@ -2,10 +2,14 @@ import Badge from "@/components/Badge";
 import { getBlog } from "@/lib/contents";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 async function BlogsPage({ params }) {
   const { id } = await params;
   const { blogData, content } = await getBlog(id);
+  if (content === null) {
+    notFound();
+  }
   return (
     <section
       className="layout-container mb-32 scroll-mt-20 select-none"
