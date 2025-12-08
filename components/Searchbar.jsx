@@ -1,12 +1,13 @@
 "use client";
 
 import useDebounce from "@/hooks/useDebounce";
+import { DEBOUNCE_DELAY } from "@/lib/constants";
+import constructQuery from "@/lib/constructQuery";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 function Searchbar({ placeholder, url }) {
-  // TODO: implement search functionality
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(
     searchParams.get("search") ? searchParams.get("search") : "",
@@ -16,25 +17,12 @@ function Searchbar({ placeholder, url }) {
 
   const filters = Object.fromEntries(searchParams);
 
-  const constructQuery = ({ category = null, search = null }) => {
-    if (search === null) search = filters?.search;
-    if (category === null) category = filters?.category;
-
-    let query = "";
-    if (search) {
-      query = `?search=${search}`;
-    }
-    if (category && category?.toLowerCase() !== "all") {
-      if (query === "") query = `?category=${category}`;
-      else query = query + `&category=${category}`;
-    }
-    return query;
-  };
-
   // Debounce
   const onSearch = useDebounce((searchQuery) => {
-    router.push(`${pathname}/${constructQuery({ search: searchQuery })}`);
-  }, 2000);
+    router.push(
+      `${pathname}/${constructQuery({ search: searchQuery }, filters)}`,
+    );
+  }, DEBOUNCE_DELAY);
 
   const handleChange = (e) => {
     const query = e.target.value;
