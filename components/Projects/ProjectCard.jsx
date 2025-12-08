@@ -10,7 +10,7 @@ function ProjectCard({
   images,
   sourceCodeUrl,
   demoUrl,
-  platforms,
+  categories,
   technologies,
 }) {
   return (
@@ -25,8 +25,8 @@ function ProjectCard({
       />
 
       <div className="mt-1 -mb-1 flex flex-wrap items-center gap-1.5">
-        {platforms?.length > 0 &&
-          platforms.map((plat) => (
+        {categories?.length > 0 &&
+          categories.map((plat) => (
             <Badge key={plat} className="bg-accent text-[0.625rem] sm:text-sm">
               {plat}
             </Badge>
