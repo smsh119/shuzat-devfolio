@@ -14,40 +14,42 @@ function ProjectCard({
   technologies,
 }) {
   return (
-    <Card>
-      <h2 className="text-2xl font-bold">{title}</h2>
-      <Image
-        width={320}
-        height={200}
-        src={images?.thumbnailUrl}
-        alt={`${title} Thumbnail`}
-        className="w-full rounded-tl-4xl rounded-br-4xl"
-      />
-
-      <div className="mt-1 -mb-1 flex flex-wrap items-center gap-1.5">
-        {categories?.length > 0 &&
-          categories.map((plat) => (
-            <Badge key={plat} className="bg-accent text-[0.625rem] sm:text-sm">
-              {plat}
-            </Badge>
-          ))}
-      </div>
-
-      <p className="text-justify text-xs">{description}</p>
-      <div className="flex flex-wrap items-center gap-1">
-        <span className="text-[0.5rem] font-bold sm:text-[0.625rem]">
-          Tech:
-        </span>
-
-        {technologies?.length > 0 &&
-          technologies.map((tech) => <Badge key={tech}>{tech}</Badge>)}
-      </div>
-      <ProjectCardButtons
-        sourceCodeUrl={sourceCodeUrl}
-        demoUrl={demoUrl}
-        projectId={id}
-      />
-    </Card>
+    <div>
+      <Card>
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <Image
+          width={320}
+          height={200}
+          src={images?.thumbnailUrl}
+          alt={`${title} Thumbnail`}
+          className="w-full rounded-tl-4xl rounded-br-4xl"
+        />
+        <div className="mt-1 -mb-1 flex flex-wrap items-center gap-1.5">
+          {categories?.length > 0 &&
+            categories.map((plat) => (
+              <Badge
+                key={plat}
+                className="bg-accent text-[0.625rem] sm:text-sm"
+              >
+                {plat}
+              </Badge>
+            ))}
+        </div>
+        <p className="text-justify text-xs">{description}</p>
+        <div className="mt-auto flex flex-wrap items-center gap-1">
+          <span className="text-[0.5rem] font-bold sm:text-[0.625rem]">
+            Tech:
+          </span>
+          {technologies?.length > 0 &&
+            technologies.map((tech) => <Badge key={tech}>{tech}</Badge>)}
+        </div>
+        <ProjectCardButtons
+          sourceCodeUrl={sourceCodeUrl}
+          demoUrl={demoUrl}
+          projectId={id}
+        />
+      </Card>
+    </div>
   );
 }
 

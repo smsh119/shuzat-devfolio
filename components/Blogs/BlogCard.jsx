@@ -56,7 +56,7 @@ function BlogCard({
           </div>
         </div>
         <p className="my-1.5 text-justify text-[0.625rem]">{description}</p>
-        <div className="flex flex-wrap items-center gap-1">
+        <div className="mt-auto flex flex-wrap items-center gap-1">
           <span className="text-[0.5rem] font-bold sm:text-[0.625rem]">
             Tags:
           </span>
