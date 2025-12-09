@@ -80,29 +80,43 @@ async function BlogsPage({ params }) {
         <div className="my-6 w-full text-justify text-xs select-text sm:text-base">
           {content}
         </div>
-        <div className="flex gap-1">
-          {/* TODO: implement sharing functionality */}
-          <a href="#">
-            <Image
-              src="/images/logos/facebook.svg"
-              alt="facebook logo"
-              width="40"
-              height="40"
-              className="w-8 transition-transform duration-200 hover:scale-[1.2]"
-            />
-          </a>
-          <a href="#">
-            <Image
-              src="/images/logos/linkedin.svg"
-              alt="linkedin logo"
-              width="40"
-              height="40"
-              className="w-8 transition-transform duration-200 hover:scale-[1.2]"
-            />
-          </a>
-        </div>
+        <ShareButtons url={`${process.env.SITE_URL}/blogs/${id}`} />
       </div>
     </section>
+  );
+}
+
+function ShareButtons({ url }) {
+  return (
+    <div>
+      <p className="mb-1 border-b-2 px-2 text-center">Share on</p>
+      <div className="flex justify-center gap-1">
+        <a
+          href={`https://facebook.com/sharer/sharer.php?u=${url}`}
+          target="_blank"
+        >
+          <Image
+            src="/images/logos/facebook.svg"
+            alt="facebook logo"
+            width="40"
+            height="40"
+            className="w-8 transition-transform duration-200 hover:scale-[1.2]"
+          />
+        </a>
+        <a
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
+          target="_blank"
+        >
+          <Image
+            src="/images/logos/linkedin.svg"
+            alt="linkedin logo"
+            width="40"
+            height="40"
+            className="w-8 transition-transform duration-200 hover:scale-[1.2]"
+          />
+        </a>
+      </div>
+    </div>
   );
 }
 
