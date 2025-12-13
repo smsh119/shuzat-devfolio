@@ -8,47 +8,52 @@ export const metadata = {
   description:
     "Hi! I'm S. M. Shuzatul Hoque. I am a Software Developer focused on building clean, elegant and high performing web applications.",
   keywords: [
-    "S. M. Shuzatul Hoque",
-    "SMSH",
-    "Shuzat",
-    "Suzat",
+    "sm shuzatul hoque",
+    "smsh",
+    "shuzat",
+    "suzat",
+    "suzat hoq",
     "software engineer",
+    "frontend developer",
+    "web developer",
     "portfolio",
-    "tailwind",
-    "javascript",
-    "Frontend Developer",
-    "React",
-    "Next.js",
-    "Web Developer",
-    "Portfolio",
+    "shuzat-devfolio",
   ],
   authors: [{ name: "S. M. Shuzatul Hoque", url: "#" }],
   creator: "S. M. Shuzatul Hoque",
-  // metadataBase: new URL("#"),
-  // TODO:
-  // openGraph: {
-  //   title: "S. M. Shuzatul Hoque | SMSH",
-  //   description:
-  //     "Hi! I'm S. M. Shuzatul Hoque. I am a Software Developer focused on building clean, elegant and high performing web applications.",
-  //   url: "#",
-  //   siteName: "SHUZAT-DEVFOLIO",
-  //   images: [
-  //     {
-  //       url: "/og-image.png",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "Portfolio Preview",
-  //     },
-  //   ],
-  //   locale: "en_US",
-  //   type: "website",
-  // },
+  metadataBase: new URL(process.env.SITE_URL),
+  openGraph: {
+    title: "S. M. Shuzatul Hoque | SMSH",
+    description:
+      "Hi! I'm S. M. Shuzatul Hoque. I am a Software Developer focused on building clean, elegant and high performing web applications.",
+    url: "/",
+    siteName: "SHUZAT-DEVFOLIO",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "S. M. Shuzatul Hoque | SMSH",
+    description:
+      "Hi! I'm S. M. Shuzatul Hoque. I am a Software Developer focused on building clean, elegant and high performing web applications.",
+    images: ["/og-image.png"],
+  },
+
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "#",
+    canonical: "/",
   },
   category: "technology",
 };
