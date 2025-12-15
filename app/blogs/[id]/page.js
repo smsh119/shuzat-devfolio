@@ -1,10 +1,26 @@
 import Badge from "@/components/Badge";
 import { getBlog } from "@/lib/contents";
+import createMetadata from "@/lib/createMetadata";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-async function BlogsPage({ params }) {
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const { blogData } = await getBlog(id);
+  if (!blogData) {
+    return {};
+  }
+  return createMetadata({
+    title: blogData.title,
+    description: blogData.description,
+    pageUrl: `/blogs/${id}`,
+    imgUrl: blogData.images?.thumbnailUrl,
+    keywords: blogData?.keywords,
+  });
+}
+
+async function BlogPage({ params }) {
   const { id } = await params;
   const { blogData, content } = await getBlog(id);
   if (content === null) {
@@ -120,4 +136,4 @@ function ShareButtons({ url }) {
   );
 }
 
-export default BlogsPage;
+export default BlogPage;

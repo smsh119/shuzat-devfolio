@@ -1,9 +1,25 @@
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import { getProject } from "@/lib/contents";
+import createMetadata from "@/lib/createMetadata";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const { projectData } = await getProject(id);
+  if (!projectData) {
+    return {};
+  }
+  return createMetadata({
+    title: projectData.title,
+    description: projectData.description,
+    pageUrl: `/projects/${id}`,
+    imgUrl: projectData.images?.thumbnailUrl,
+    keywords: projectData?.keywords,
+  });
+}
 
 async function ProjectPage({ params }) {
   const { id } = await params;
