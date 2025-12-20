@@ -2,6 +2,7 @@
 
 import { MESSAGE_CHAR_LIMIT } from "@/lib/constants";
 import { contactFormSchema } from "@/lib/formValidationSchemas";
+import sendContactMail from "@/lib/sendContactMail";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "motion/react";
 import { useState } from "react";
@@ -31,15 +32,14 @@ function ContactForm() {
   };
 
   const onSubmit = async (data) => {
-    // TODO: Implement form submission logic
-    console.log("submiting: ", data);
-    const prom = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("submitted");
-      }, 2000);
-    });
-    const res = await prom;
-    console.log(res);
+    const resData = await sendContactMail(data);
+    if (resData?.error) {
+      {
+        console.error("Error sending contact mail:", resData.error);
+        toast.error("Failed to send message. Please try again.");
+        return;
+      }
+    }
     reset();
     toast.success("Message sent successfully!");
   };
