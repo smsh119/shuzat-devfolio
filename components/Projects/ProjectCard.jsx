@@ -66,12 +66,14 @@ function ProjectCardButtons({ sourceCodeUrl, demoUrl, projectId }) {
         </Link>
         <Link
           href={sourceCodeUrl}
+          target="_blank"
           className="border-primary hover:text-accent grow basis-1 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
         >
           Source Code
         </Link>
         <Link
           href={demoUrl}
+          target="_blank"
           className="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
         >
           View Demo
