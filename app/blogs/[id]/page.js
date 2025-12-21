@@ -51,9 +51,12 @@ async function BlogPage({ params }) {
               height="10"
               className="h-2.5 w-2.5 sm:h-4 sm:w-4"
             />
-            <span className="text-[0.5rem] sm:text-[0.625rem]">
+            <Link
+              href="/"
+              className="hover:text-accent text-[0.5rem] transition-colors duration-200 sm:text-[0.625rem]"
+            >
               {blogData?.author}
-            </span>
+            </Link>
           </div>
           <div className="flex items-center gap-0.5">
             <Image

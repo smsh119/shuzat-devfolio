@@ -43,7 +43,12 @@ async function ProjectPage({ params }) {
         <h1 className="mb-1 text-xl font-bold select-text sm:text-3xl">
           {projectData.title}
         </h1>
-
+        <p className="text-center text-[0.5rem] sm:text-sm">
+          Developed by{" "}
+          <Link href="/" className="text-accent font-bold">
+            {projectData?.developedBy}
+          </Link>
+        </p>
         <div className="my-6 w-full">
           <Image
             src={projectData.images?.imgUrls[0]}
