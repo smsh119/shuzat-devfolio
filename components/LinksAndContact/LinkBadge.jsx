@@ -6,6 +6,7 @@ function LinkBadge({ logoUrl, name, href }) {
     <Link
       href={href}
       className="hover:bg-accent flex flex-col items-center justify-center gap-y-1 rounded-lg p-2 transition duration-200 ease-linear hover:scale-[1.08]"
+      target="_blank"
     >
       <Image
         width={50}
