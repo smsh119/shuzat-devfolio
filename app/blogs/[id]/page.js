@@ -1,5 +1,5 @@
 import Badge from "@/components/Badge";
-import { getBlog } from "@/lib/contents";
+import { getBlog, getBlogs } from "@/lib/contents";
 import createMetadata from "@/lib/createMetadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,13 @@ export async function generateMetadata({ params }) {
     imgUrl: blogData.images?.thumbnailUrl,
     keywords: blogData?.keywords,
   });
+}
+
+export function generateStaticParams() {
+  const allBlogs = getBlogs();
+  return allBlogs.map((blog) => ({
+    id: blog.id,
+  }));
 }
 
 async function BlogPage({ params }) {

@@ -1,6 +1,6 @@
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
-import { getProject } from "@/lib/contents";
+import { getProject, getProjects } from "@/lib/contents";
 import createMetadata from "@/lib/createMetadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +19,13 @@ export async function generateMetadata({ params }) {
     imgUrl: projectData.images?.thumbnailUrl,
     keywords: projectData?.keywords,
   });
+}
+
+export function generateStaticParams() {
+  const allProjects = getProjects();
+  return allProjects.map((project) => ({
+    id: project.id,
+  }));
 }
 
 async function ProjectPage({ params }) {
