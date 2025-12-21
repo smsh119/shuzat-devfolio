@@ -2,6 +2,7 @@ import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import { getProject, getProjects } from "@/lib/contents";
 import createMetadata from "@/lib/createMetadata";
+import formatDate from "@/lib/formatDate";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -48,6 +49,9 @@ async function ProjectPage({ params }) {
           <Link href="/" className="text-accent font-bold">
             {projectData?.developedBy}
           </Link>
+        </p>
+        <p className="text-[0.5rem] sm:text-xs">
+          Last updated on {formatDate(projectData?.lastModified)}
         </p>
         <div className="my-6 w-full">
           <Image

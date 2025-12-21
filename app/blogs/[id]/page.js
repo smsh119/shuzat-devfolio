@@ -1,6 +1,7 @@
 import Badge from "@/components/Badge";
 import { getBlog, getBlogs } from "@/lib/contents";
 import createMetadata from "@/lib/createMetadata";
+import formatDate from "@/lib/formatDate";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -67,7 +68,7 @@ async function BlogPage({ params }) {
               className="h-2.5 w-2.5 sm:h-4 sm:w-4"
             />
             <span className="text-[0.5rem] sm:text-[0.625rem]">
-              {blogData?.publishDate}
+              {formatDate(blogData?.publishDate)}
             </span>
           </div>
         </div>
