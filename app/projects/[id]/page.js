@@ -104,9 +104,16 @@ async function ProjectPage({ params }) {
           >
             Source Code
           </Button>
-          <Button href={projectData.demoUrl} type="anchor" target="_blank">
-            View Demo
-          </Button>
+          {projectData?.demoUrl && (
+            <Button href={projectData.demoUrl} type="anchor" target="_blank">
+              View Demo
+            </Button>
+          )}
+          {projectData?.liveUrl && (
+            <Button href={projectData.liveUrl} type="anchor" target="_blank">
+              Live Link
+            </Button>
+          )}
         </div>
 
         <div className="my-6 w-full text-justify text-xs select-text sm:text-base">

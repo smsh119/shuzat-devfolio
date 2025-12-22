@@ -10,6 +10,7 @@ function ProjectCard({
   images,
   sourceCodeUrl,
   demoUrl,
+  liveUrl,
   categories,
   technologies,
 }) {
@@ -47,13 +48,14 @@ function ProjectCard({
           sourceCodeUrl={sourceCodeUrl}
           demoUrl={demoUrl}
           projectId={id}
+          liveUrl={liveUrl}
         />
       </Card>
     </div>
   );
 }
 
-function ProjectCardButtons({ sourceCodeUrl, demoUrl, projectId }) {
+function ProjectCardButtons({ sourceCodeUrl, demoUrl, liveUrl, projectId }) {
   return (
     <div className="h-4">
       <div className="project-card-buttons-bg absolute bottom-0 left-0 h-10 w-full bg-black opacity-50"></div>
@@ -71,13 +73,24 @@ function ProjectCardButtons({ sourceCodeUrl, demoUrl, projectId }) {
         >
           Source Code
         </Link>
-        <Link
-          href={demoUrl}
-          target="_blank"
-          className="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
-        >
-          View Demo
-        </Link>
+        {liveUrl && (
+          <Link
+            href={liveUrl}
+            target="_blank"
+            className="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
+          >
+            Live Link
+          </Link>
+        )}
+        {!liveUrl && demoUrl && (
+          <Link
+            href={demoUrl}
+            target="_blank"
+            className="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
+          >
+            View Demo
+          </Link>
+        )}
       </div>
     </div>
   );
