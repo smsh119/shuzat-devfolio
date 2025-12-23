@@ -5,8 +5,8 @@ function Hero() {
   return (
     <section className="layout-container my-11 flex max-w-[840px] flex-col items-center select-none sm:my-14 sm:flex-row">
       <motion.div
-        initial={{ opacity: 0, transform: "translateX(-100px)" }}
-        whileInView={{ opacity: 1, transform: "translateX(0)" }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="z-1 text-center sm:shrink-0 sm:grow sm:text-left"
       >
@@ -20,8 +20,8 @@ function Hero() {
         <p className="text-2xl">Software Developer</p>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, transform: "translateX(100px)" }}
-        whileInView={{ opacity: 1, transform: "translateX(0)" }}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="my-5 w-1/2 sm:my-0 sm:-ml-8 sm:w-[330px]"
       >

@@ -5,8 +5,8 @@ import MailAndLinks from "./MailAndLinks";
 
 function LinksAndContact() {
   const motionOptions = {
-    initial: { opacity: 0, transform: "translateY(50px)" },
-    whileInView: { opacity: 1, transform: "translateY(0)" },
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.5, ease: "easeInOut" },
   };
   return (

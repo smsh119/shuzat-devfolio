@@ -6,8 +6,8 @@ import LinksGroup from "./LinksGroup";
 
 function MailAndLinks() {
   const motionOptions = {
-    initial: { opacity: 0, transform: "translateX(-50px)" },
-    whileInView: { opacity: 1, transform: "translateX(0)" },
+    initial: { opacity: 0, x: -50 },
+    whileInView: { opacity: 1, x: 0 },
     transition: { duration: 0.5, ease: "easeInOut" },
   };
   return (
