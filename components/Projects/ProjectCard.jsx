@@ -84,8 +84,7 @@ function ProjectCardButtons({ sourceCodeUrl, demoUrl, liveUrl, projectId }) {
         )}
         {!liveUrl && demoUrl && (
           <Link
-            href={demoUrl}
-            target="_blank"
+            href={`/projects/${projectId}/demo`}
             className="border-primary hover:text-accent grow basis-1 border-l-2 p-1 text-xs transition-transform duration-200 hover:scale-[1.05] hover:font-bold"
           >
             View Demo

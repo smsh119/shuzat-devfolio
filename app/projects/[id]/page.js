@@ -105,7 +105,7 @@ async function ProjectPage({ params }) {
             Source Code
           </Button>
           {projectData?.demoUrl && (
-            <Button href={projectData.demoUrl} type="anchor" target="_blank">
+            <Button href={`/projects/${id}/demo`} type="link">
               View Demo
             </Button>
           )}
