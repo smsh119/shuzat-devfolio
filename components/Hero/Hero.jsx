@@ -3,7 +3,10 @@ import Typing from "../Typing";
 
 function Hero() {
   return (
-    <section className="layout-container my-11 flex max-w-[840px] flex-col items-center select-none sm:my-14 sm:flex-row">
+    <section
+      className="layout-container my-11 flex max-w-[840px] flex-col items-center select-none sm:my-14 sm:flex-row"
+      id="hero"
+    >
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}

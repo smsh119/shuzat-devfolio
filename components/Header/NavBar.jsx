@@ -1,12 +1,25 @@
 "use client";
 
+import useScrollObserver from "@/hooks/useScrollObserver";
 import BurgerMenuIcon from "@/public/images/logos/burger-menu.svg";
 import Image from "next/image";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import NavLink from "./NavLink";
+
+const navbarHomeSections = [
+  { label: "About", sectionId: "about" },
+  { label: "Projects", sectionId: "projects" },
+  { label: "Links and Contact", sectionId: "linksAndContact" },
+];
 
 function NavBar() {
   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
+  const pathname = usePathname();
+  const activeId = useScrollObserver(
+    ["hero", "blogs", ...navbarHomeSections.map((sec) => sec.sectionId)],
+    ["hero", "blogs"],
+  );
 
   return (
     <nav className="relative">
@@ -24,34 +37,23 @@ function NavBar() {
         id="menu"
         className={`${navbarCollapsed ? "collapsible--close" : "collapsible--open"} absolute right-0 -z-2 flex w-32 flex-col gap-y-0.5 text-right text-xs transition-[top] duration-200 ease-linear sm:relative sm:top-0 sm:z-0 sm:flex sm:w-auto sm:flex-row sm:text-base`}
       >
-        <Link
-          href="/#about"
-          className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
-          onClick={() => setNavbarCollapsed(true)}
-        >
-          About
-        </Link>
-        <Link
-          href="/#projects"
-          className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
-          onClick={() => setNavbarCollapsed(true)}
-        >
-          Projects
-        </Link>
-        <Link
-          href="/#linksAndContact"
-          className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
-          onClick={() => setNavbarCollapsed(true)}
-        >
-          Links and Contact
-        </Link>
-        <Link
+        {navbarHomeSections.map((sec) => (
+          <NavLink
+            key={sec.sectionId}
+            href={`/#${sec.sectionId}`}
+            onClick={() => setNavbarCollapsed(true)}
+            isActive={sec.sectionId === activeId}
+          >
+            {sec.label}
+          </NavLink>
+        ))}
+        <NavLink
           href="/blogs"
-          className="bg-secondary hover:text-accent hover:bg-bg active:bg-bg px-2 py-1 transition duration-200 ease-linear hover:cursor-pointer sm:rounded"
           onClick={() => setNavbarCollapsed(true)}
+          isActive={activeId === "blogs"}
         >
           Blogs
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
