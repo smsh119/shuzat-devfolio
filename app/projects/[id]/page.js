@@ -50,9 +50,18 @@ async function ProjectPage({ params }) {
             {projectData?.developedBy}
           </Link>
         </p>
-        <p className="text-[0.5rem] sm:text-xs">
-          Last updated on {formatDate(projectData?.lastModified)}
-        </p>
+        {projectData?.lastUpdated && (
+          <p className="text-[0.5rem] sm:text-xs">
+            Last updated in{" "}
+            {formatDate(projectData?.lastUpdated, { day: false })}
+          </p>
+        )}
+        {!projectData?.lastUpdated && projectData?.builtDate && (
+          <p className="text-[0.5rem] sm:text-xs">
+            Originally built in{" "}
+            {formatDate(projectData?.builtDate, { day: false })}
+          </p>
+        )}
         <div className="my-6 w-full">
           <Image
             src={projectData.images?.imgUrls[0]}
