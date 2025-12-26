@@ -54,7 +54,6 @@ function ContactForm() {
         register={register}
         label="Name"
         type="text"
-        name="name"
         id="name"
         autoComplete="name"
         error={errors?.name?.message}
@@ -64,7 +63,6 @@ function ContactForm() {
         register={register}
         label="Email"
         type="email"
-        name="email"
         id="email"
         autoComplete="email"
         required
@@ -77,7 +75,6 @@ function ContactForm() {
         register={register}
         onChange={(e) => setMsgCharCount(e.target.value.length)}
         maxLength={MESSAGE_CHAR_LIMIT}
-        name="message"
         id="message"
         autoComplete="off"
         rows="8"

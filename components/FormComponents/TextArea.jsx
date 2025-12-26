@@ -4,7 +4,6 @@ import InputErrorText from "./InputErrorText";
 function TextArea({
   label,
   register,
-  name,
   id,
   error,
   maxLength,
@@ -38,12 +37,12 @@ function TextArea({
         </motion.span>
       </label>
       <textarea
-        {...register(name, {
+        {...register(id, {
           onChange: onChange,
         })}
         {...rest}
         maxLength={maxLength}
-        name={name}
+        name={id}
         id={id}
         className={`${error ? "ring-danger ring-2" : "focus:ring-text focus:ring-2"} bg-secondary input:-webkit-autofill block w-full rounded-[10px] p-1 transition duration-200 ease-linear focus:outline-0`}
       ></textarea>
