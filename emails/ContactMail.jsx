@@ -45,8 +45,6 @@ function ContactMail({ name, email, message }) {
       >
         <Body className="text-text m-0 p-0">
           <Container className="bg-bg mt-5 w-screen p-0 pb-30 text-center">
-            {/* TODO: add email logo */}
-            {/* <Img src="./LOGO v1.png" alt="Logo" width="30" height="30" /> */}
             <Text className="bg-secondary m-0 px-0 py-4 text-xl font-bold">
               SHUZAT-DEVFOLIO
             </Text>

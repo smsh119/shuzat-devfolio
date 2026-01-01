@@ -1,8 +1,0 @@
-
-User-agent: *
-
-# TODO: Allow it before building
-Disallow: /
-
-# TODO: add a sitemap before buliding
-Sitemap: 

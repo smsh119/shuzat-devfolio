@@ -3,7 +3,9 @@ import { getBlogs, getProjects } from "@/lib/contents";
 export default function sitemap() {
   const projectsSitemaps = getProjects().map((proj) => ({
     url: `${process.env.SITE_URL}/projects/${proj.id}`,
-    lastModified: new Date(proj?.lastModified),
+    lastModified: proj?.lastUpdated
+      ? new Date(proj?.lastUpdated)
+      : new Date(proj?.builtDate),
     changeFrequency: "yearly",
     priority: 0.8,
   }));
