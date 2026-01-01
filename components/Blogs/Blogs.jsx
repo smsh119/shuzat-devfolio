@@ -10,7 +10,7 @@ function Blogs({ blogs }) {
         {blogs?.length > 0 ? (
           blogs?.map((blog) => <BlogCard key={blog.id} {...blog} />)
         ) : (
-          <div>Sorry! No blogs.</div>
+          <div>Sorry! No blogs available.</div>
         )}
       </div>
     </section>

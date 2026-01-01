@@ -30,7 +30,7 @@ function BlogCard({
             </Badge>
           ))}
         </div>
-        <h2 className="text-2xl font-bold">Blog Title</h2>
+        <h2 className="text-xl font-bold">{title}</h2>
         <div className="flex gap-2.5">
           <div className="flex items-center gap-0.5">
             <Image
