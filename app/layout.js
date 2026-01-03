@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import ToasterProvider from "@/components/ToasterProvider";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata = {
@@ -21,7 +22,7 @@ export const metadata = {
   ],
   authors: [{ name: "S. M. Shuzatul Hoque", url: "#" }],
   creator: "S. M. Shuzatul Hoque",
-  metadataBase: new URL(process.env.SITE_URL),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "S. M. Shuzatul Hoque | SMSH",
     description:

@@ -1,5 +1,6 @@
 import Filter from "@/components/Filter";
 import Projects from "@/components/Projects/Projects";
+import { SITE_URL } from "@/lib/constants";
 import { getProjects } from "@/lib/contents";
 import filterByCategoryAndSearch from "@/lib/filterByCategoryAndSearch";
 
@@ -16,7 +17,7 @@ export const metadata = {
   ],
   authors: [{ name: "S. M. Shuzatul Hoque", url: "#" }],
   creator: "S. M. Shuzatul Hoque",
-  metadataBase: new URL(`${process.env.SITE_URL}/projects`),
+  metadataBase: new URL(`${SITE_URL}/projects`),
   openGraph: {
     title: "PROJECTS | SHUZAT-DEVFOLIO",
     description:
@@ -25,7 +26,7 @@ export const metadata = {
     siteName: "SHUZAT-DEVFOLIO",
     images: [
       {
-        url: `${process.env.SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Portfolio Preview",
@@ -40,7 +41,7 @@ export const metadata = {
     title: "PROJECTS | SHUZAT-DEVFOLIO",
     description:
       "All the projects developed by S. M. Shuzatul Hoque on software development, web development, game development and more.",
-    images: [`${process.env.SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/og-image.png`],
   },
   alternates: {
     canonical: "/projects",

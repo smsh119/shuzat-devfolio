@@ -1,4 +1,5 @@
 import Badge from "@/components/Badge";
+import { SITE_URL } from "@/lib/constants";
 import { getBlog, getBlogs } from "@/lib/contents";
 import createMetadata from "@/lib/createMetadata";
 import formatDate from "@/lib/formatDate";
@@ -107,7 +108,7 @@ async function BlogPage({ params }) {
         <div className="my-6 w-full text-justify text-xs select-text sm:text-base">
           {content}
         </div>
-        <ShareButtons url={`${process.env.SITE_URL}/blogs/${id}`} />
+        <ShareButtons url={`${SITE_URL}/blogs/${id}`} />
       </div>
     </section>
   );
