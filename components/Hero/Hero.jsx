@@ -20,7 +20,7 @@ function Hero() {
         <h1 className="text-[1.8rem] font-bold sm:text-4xl">
           S. M. Shuzatul Hoque
         </h1>
-        <p className="text-2xl">Software Developer</p>
+        <p className="text-2xl">Software Engineer</p>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: 100 }}
