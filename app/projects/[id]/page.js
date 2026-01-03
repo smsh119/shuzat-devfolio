@@ -40,8 +40,8 @@ async function ProjectPage({ params }) {
       className="layout-container relative mb-32 scroll-mt-20 select-none"
       id="blog"
     >
-      <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center">
-        <h1 className="mb-1 text-xl font-bold select-text sm:text-3xl">
+      <div className="mx-auto mt-8 flex max-w-[90vw] flex-col items-center sm:max-w-3xl">
+        <h1 className="mb-1 text-2xl font-bold select-text sm:text-3xl">
           {projectData.title}
         </h1>
         <p className="text-center text-[0.5rem] sm:text-sm">
@@ -125,7 +125,7 @@ async function ProjectPage({ params }) {
           )}
         </div>
 
-        <div className="my-6 w-full text-justify text-xs select-text sm:text-base">
+        <div className="my-6 w-full text-xs select-text sm:text-base">
           {content}
         </div>
       </div>

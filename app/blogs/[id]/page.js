@@ -41,7 +41,7 @@ async function BlogPage({ params }) {
       id="blog"
     >
       <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center">
-        <h1 className="mb-1 text-xl font-bold select-text sm:text-3xl">
+        <h1 className="mb-1 text-2xl font-bold select-text sm:text-3xl">
           {blogData?.title}
         </h1>
         <div className="flex gap-2.5">
