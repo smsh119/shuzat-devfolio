@@ -21,7 +21,7 @@ function LinksAndContact() {
       <motion.p {...motionOptions} className="-mt-6 text-2xl">
         Get in touch
       </motion.p>
-      <div className="grid grid-cols-1 items-center justify-items-center gap-y-10 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-center justify-items-center gap-y-10 overflow-x-hidden lg:grid-cols-2">
         <ContactForm />
         <MailAndLinks />
       </div>
