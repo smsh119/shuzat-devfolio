@@ -40,7 +40,7 @@ async function BlogPage({ params }) {
       className="layout-container mb-32 scroll-mt-20 select-none"
       id="blog"
     >
-      <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center">
+      <div className="mx-auto mt-8 flex max-w-[90vw] flex-col items-center sm:max-w-3xl">
         <h1 className="mb-1 text-2xl font-bold select-text sm:text-3xl">
           {blogData?.title}
         </h1>
