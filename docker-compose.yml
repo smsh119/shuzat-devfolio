@@ -1,0 +1,16 @@
+name: shuzat-devfolio
+
+services:
+  web:
+    image: shuzat-devfolio:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    environment:
+      NODE_ENV: production
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      DEVFOLIO_MAIL: ${DEVFOLIO_MAIL}
+      SEND_MAIL_TO: ${SEND_MAIL_TO}
+
+    restart: unless-stopped

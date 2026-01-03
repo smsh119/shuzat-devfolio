@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output (will be rebuilt inside Docker)
+.next
+out
+dist
+build
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# VCS
+.git
+.gitignore
+
+# OS / Editor files
+.vscode
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Cache
+.cache
+.eslintcache
+*.log
