@@ -1,11 +1,24 @@
 import ContactMail from "@/emails/ContactMail";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let cachedClient = null;
+
+const getResendClient = () => {
+  if (!cachedClient) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error("RESEND_API_KEY not found.");
+    }
+    cachedClient = new Resend(apiKey);
+  }
+
+  return cachedClient;
+};
 
 export async function POST(request) {
   const req = await request.json();
   try {
+    const resend = getResendClient();
     const { data, error } = await resend.emails.send({
       from: process.env.DEVFOLIO_MAIL,
       to: process.env.SEND_MAIL_TO,
