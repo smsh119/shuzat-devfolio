@@ -32,7 +32,7 @@ function About() {
         {...motionOptions}
         className="flex justify-center gap-4 sm:gap-6"
       >
-        <Button href="#" size="lg" type="anchor" download>
+        <Button href="/Resume.pdf" size="lg" type="anchor" download>
           Download Resume
         </Button>
         <Button href="#linksAndContact" color="accent" type="link" size="lg">
