@@ -14,3 +14,18 @@ services:
       SEND_MAIL_TO: ${SEND_MAIL_TO}
 
     restart: unless-stopped
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

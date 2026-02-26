@@ -48,7 +48,7 @@ function ContactForm() {
     <motion.form
       {...motionOptions}
       onSubmit={handleSubmit(onSubmit)}
-      className="my-11 flex w-full max-w-[540px] flex-col items-center lg:pl-5"
+      className="my-11 flex w-full max-w-[540px] flex-col items-center lg:pl-5 lg:pr-0.5"
     >
       <Input
         register={register}

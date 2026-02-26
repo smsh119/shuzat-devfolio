@@ -1,4 +1,4 @@
-const aboutDescription = `I am a <strong>Software Engineer</strong> focused on building clean, elegant and high performing web applications. I have already worked on about <strong>10+ web projects</strong> where I was responsible for building Front-end of the application using popular languages, libraries and frameworks including <strong>HTML, CSS, JavaScript, ReactJS, Next.js, Tailwind CSS</strong> and much more. I am also skilled with Back-end technology and have built 5+ REST APIs for my personal projects. I am <strong>currently working</strong> as a <strong>Web Developer</strong> at <strong>ReliSource Technologies LTD</strong>. I am a part of Learning Management System (LMS) team.`;
+const aboutDescription = `I am a <strong>Software Engineer</strong> focused on building clean, elegant and high performing web applications. I have already worked on about <strong>10+ web projects</strong> where I was responsible for building Front-end of the application using popular languages, libraries and frameworks including <strong>HTML, CSS, JavaScript, ReactJS, Next.js, Tailwind CSS</strong> and much more. I am also skilled with Back-end technology and have built 5+ REST APIs for my personal projects. I am <strong>currently working</strong> as a <strong>Web Developer</strong> at <strong>ReliSource Technologies LTD</strong>.`;
 
 const langsAndFrameworks = [
   { logo: "/images/logos/html5.svg", name: "HTML5" },
@@ -35,5 +35,6 @@ export {
   hobbies,
   interests,
   langsAndFrameworks,
-  tools,
+  tools
 };
+
